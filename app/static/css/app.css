@@ -1,7 +1,10 @@
 body {
     padding-top: 5rem;
+    background-color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Flash Messages Styling */
 .flashes {
     list-style: none;
     padding: 0;
@@ -12,10 +15,11 @@ body {
 .flashes div {
     padding: 15px;
     margin-bottom: 10px;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 8px;
+    font-weight: 500;
     text-align: center;
     animation: fadeIn 0.5s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 @keyframes fadeIn {
@@ -23,31 +27,149 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-
 .flashes .alert-success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
+    border-left: 4px solid #28a745;
 }
 
 .flashes .alert-danger {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+    border-left: 4px solid #dc3545;
 }
-
 
 .flashes .btn-close {
     float: right;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1;
-    color: #000;
-    opacity: 0.5;
+    color: #999;
     background: transparent;
     border: 0;
     cursor: pointer;
 }
 
 .flashes .btn-close:hover {
-    opacity: 1;
+    color: #333;
+}
+
+/* Contact Form Container Styling */
+.form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.form-container h1 {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffb6c1; /* Just a touch of pink */
+}
+
+.form-container .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+    font-size: 1rem;
+}
+
+.form-group label:after {
+    content: " *";
+    color: #ffb6c1; /* Pink asterisk */
+    font-weight: normal;
+}
+
+/* Input Field Styling */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ffb6c1; /* Pink focus border */
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+}
+
+.form-control:hover {
+    border-color: #ffb6c1;
+}
+
+/* Textarea Specific Styling */
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Placeholder Styling */
+.form-control::placeholder {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* Error Message Styling */
+.text-danger {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+/* Submit Button Styling - Just a hint of pink */
+.btn-primary {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #ff9eb5; /* Slightly deeper pink */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .form-container h1 {
+        font-size: 1.8rem;
+    }
 }
