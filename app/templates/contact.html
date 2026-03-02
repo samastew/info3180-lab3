@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="form-container">
+    <h1>Contact Form</h1>
+    <div class="subtitle">Fill in this form to contact the site owners.</div>
+
+    <form method="POST" action="{{ url_for('contact') }}">
+        {{ form.csrf_token }}
+
+        <div class="form-group">
+            {{ form.name.label }}
+            {{ form.name(class="form-control", placeholder="Please enter your full name") }}
+            {% if form.name.errors %}
+                {% for error in form.name.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email(class="form-control", placeholder="Please enter your e-mail address") }}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.subject.label }}
+            {{ form.subject(class="form-control", placeholder="Please enter the subject for your message") }}
+            {% if form.subject.errors %}
+                {% for error in form.subject.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.message.label }}
+            {{ form.message(class="form-control", placeholder="Please enter the message you would like to send", rows="6") }}
+            {% if form.message.errors %}
+                {% for error in form.message.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Send</button>
+    </form>
+</div>
+{% endblock %}
